@@ -1,0 +1,41 @@
+###
+# file name: setting.yaml (Wavemotion-lightning)
+# Author: Dr. Xiaoxian Guo @ Shanghai Jiao Tong University, China
+# Email: xiaoxguo@sjtu.edu.cn
+# Website: https://naoce.sjtu.edu.cn/teachers/9004.html
+# Github: https://github.com/XiaoxG/waveMotion-lightning/
+# Create date: 2021/10/08
+# Wavemotion-lightning-- a demonstration code for wave motion prediction of an offshore platform. 
+# Refers to preprint Arvix: "Probabilistic prediction of the heave motions of a semi-submersible by a deep learning model"
+###
+
+training:
+  lr: 0.01
+  batch_size: 512
+  max_epoch: 10
+  early_stop: True
+  early_stop_setting:
+    monitor: 'val_acc'
+    min_delta: 0.001
+    patience: 20
+    verbose: True
+    mode: 'max'
+  gpus: 0 # 0 = cpu if -1: DDP accelator used
+  precision: 16 # work with pytorch > 1.6
+data:
+  filedic: '/data/' 
+  time_step: 15
+  forward_step: 5
+  wave_lag: 5
+  noise_level: 0.1
+  motion: 'Heave'
+  num_workers: 0
+model:
+  input_dim: 2
+  hidden_dim: 200
+  num_rnn_layers: 2
+  num_FC_layers: 5
+  num_FC_neurons: 80
+  dropout: 0.315
+  activation: 'tanh'
+  rnn_type: 'lstm' # 'gru'
