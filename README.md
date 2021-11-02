@@ -13,7 +13,7 @@ Create date: 2021/10/08
 
 Wavemotion-lightning-- a demonstration code for wave motion prediction of an offshore platform. 
 
-Refers to preprint Arvix: "Probabilistic prediction of the heave motions of a semi-submersible by a deep learning model"
+Refers to preprint Arvix: "Probabilistic prediction of the heave motions of a semi-submersible by a deep learning model" (https://arxiv.org/abs/2111.00873)
 
 This notebook demonstrates the learning process of the provided model.
 
